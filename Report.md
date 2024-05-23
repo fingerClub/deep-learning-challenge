@@ -30,3 +30,23 @@ A large amount of units were added to compensate for the ammount of categories a
 ## Optimzation
 
 In short, Optimization of above .75 accuracy was not achieved but the foillowing results were achieved: accuracy: 0.7318 - loss: 0.5731 which indicates a .0047 increase. the following methods were tested to increase optimization: 
+
+* Increasing Threshold for "other" bin for CLASSIFICATION and APPLICATION_TYPE, which ended in a net loss in accuracy
+* Changing internal layers to relu activation, which gave no change
+* Increasing layer amount, and decresing the ammount of units for each ash shown here:
+  # Building the model
+  nn = tf.keras.models.Sequential()
+  nn.add(tf.keras.layers.Dense(21, activation="sigmoid"))
+
+  # Adding layers as specified
+  layer0 = tf.keras.layers.Dense(units=1, activation='sigmoid')
+  nn.add(layer0)
+  layer1 = tf.keras.layers.Dense(units=1, activation='sigmoid')
+  nn.add(layer1)
+  layer2 = tf.keras.layers.Dense(units=11, activation='sigmoid')
+  nn.add(layer2)
+  layer3 = tf.keras.layers.Dense(units=16, activation='sigmoid')
+  nn.add(layer3)
+  layer4 = tf.keras.layers.Dense(units=1, activation='sigmoid')
+  nn.add(layer4)
+Which increased overall Accuracy as said above.
