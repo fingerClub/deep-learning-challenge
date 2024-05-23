@@ -50,3 +50,5 @@ In short, Optimization of above .75 accuracy was not achieved but the foillowing
   layer4 = tf.keras.layers.Dense(units=1, activation='sigmoid')
   nn.add(layer4)
 Which increased overall Accuracy as said above.
+
+In the future, further analysis must be done to measure the effects of each Feature and their respective values on the accuracy of the whole model. Understanding the relationship between these features and the layers in the context of neural network models is essential to optimizing performance. A random forest model should be made first to determine the importance in making predictions and then important features should be adjusted accordingly. 
